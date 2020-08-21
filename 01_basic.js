@@ -91,3 +91,39 @@ console.log(Age,Age + 3 , `My age is ${Age}`);
 
 // Boolean & Comparisons
 
+console.log(true,false,"true","false");
+
+// methods can return booleans 
+
+let email = 'ahmedzahid.pk21@gmail.com';
+let familyNames = ['muhammad','ahmed','zahid'];
+
+result = email.includes('.');
+console.log('if present return true: ',result);
+result = familyNames.includes('muhammad');
+console.log('if names present return true: ',result);
+
+
+// comaprison operators
+
+age = 25;
+// returns ture if the below condition meets
+console.log(age == 25);
+console.log(age == 30);
+console.log(age != 30);
+console.log(age > 20);
+console.log(age < 20);
+console.log(age <= 25);
+console.log(age >= 25);
+
+name = 'saqib';
+// return true if the condition meets
+console.log(name == 'saqib');
+// it is case-sensitive
+// it compare alphabetically s > c it right returns true
+console.log(name > 'crystal');
+
+// the weightage of the lowercase is greater than uppercase
+console.log(name > 'Saqib');
+console.log(name > 'zahid');
+console.log(name > 'Zahid');
