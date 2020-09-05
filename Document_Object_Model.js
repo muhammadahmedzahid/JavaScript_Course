@@ -49,3 +49,73 @@ console.log(par);
 // We can iterate using the index to access the each element.
 
 // Accesing the HTML and Adding and Changing Page Content.
+
+// Series Starts Here
+// Lecture # 01
+
+// it select the first paragraph from the hmtl file
+const p = document.querySelector('p');
+console.log(p);
+
+// to extract the innerText inside the p we use 
+// the property innerText
+console.log(p.innerText);
+
+// Changing the Text of HMTL
+
+p.innerText = 'hi the text is changed';
+
+// += to add the content in the previous data as well
+p.innerText += ' hey';
+
+// Accessing multiple HMTL tags at onces
+
+const pa = document.querySelectorAll('p');
+pa.forEach(paraa => {
+console.log(paraa.innerText);
+});
+
+// Accessing the inner HTML having class you have
+
+const contenty = document.querySelector('.content');
+console.log(contenty.innerHTML);
+
+// Update inner HTML
+
+contenty.innerHTML = '<h2> This is overwrite </h2>';
+
+// Adding the content HMTL
+
+contenty.innerHTML += '<h2> This is overwrite </h2>';
+
+// Let say you have to add Multiple Enteries in HTML
+// Let say the data is comes from database
+
+const people = ['muhammad','ahmed','zahid'];
+
+people.forEach(person => {
+contenty.innerHTML += `<p>${person}</p>`;
+});
+
+// Lecture # 02 
+// Getting and Setting Content
+// href and class is the attributes
+
+const link = document.querySelector('a');
+console.log(link.getAttribute('href'));
+
+// Setting up the Attribute
+
+link.setAttribute('href','https://www.facebook.com');
+link.innerText = 'Go to Facebook';
+
+const mssg = document.querySelector('p');
+console.log(mssg.getAttribute('class'));
+mssg.setAttribute('class','success');
+
+// Also you add the attributes if not already present there
+
+mssg.setAttribute('style','color:green');
+
+// Lecture # 03 
+// Changing the CSS Attribute
