@@ -245,11 +245,11 @@ console.log('you clicked me');
 
 const items = document.querySelectorAll('li');
 
-// items.forEach(item => {
+items.forEach(item => {
 
   // Adding a listener
 
-  // item.addEventListener('click',e => {
+  item.addEventListener('click',e => {
     // in the first parameter we have to specify which event we want to occur.
     // we may or may not use the second parameter as second parameters gave the result 
     // or the information which the event occurs.
@@ -258,9 +258,9 @@ const items = document.querySelectorAll('li');
     // console.log(e.target);
     // console.log(item);
     // e.target.style.textDecoration = 'line-through';
-  // });
+  });
 
-// });
+});
 
 // Lecture # 07
 
@@ -320,23 +320,41 @@ Items.forEach(item =>{
 
 // So now instead of li we use the ul.
 
-// ul.addEventListener('click',e => {
+ul.addEventListener('click',e => {
 
-//   console.log(e.target);
-//   // Why we write the if line as now we are sensing as ul box maybe user click between the box.
-//   // so that's why we are getting the target and then tagName
-//   if(e.target.tagName === 'LI'){
-//     e.target.remove();
-//   }
-// });
+  console.log(e.target);
+  // Why we write the if line as now we are sensing as ul box maybe user click between the box.
+  // so that's why we are getting the target and then tagName
+  if(e.target.tagName === 'LI'){
+    e.target.remove();
+  }
+});
 
 // Lecture # 09
 // More DOM Events
 // We demonetrate the copy, mouse-Position & Scroll event.
 
-const c = document.querySelector('box');
-console.log(c);
-// Copy.addEventListener('copy', () => {
+// const copy = document.querySelector('.copyme');
+// console.log(copy);
+// copy.addEventListener('copy', () => {
 //   console.log('OI my conten is copyright');
 // });
 
+const box = document.querySelector('.box')
+
+box.addEventListener('mousemove',e => {
+// console.log(e);
+// console.log(e.offsetX,e.offsetY);
+box.textContent = `xpos - ${e.offsetX} y pos - ${e.offsetY}`;
+});
+document.addEventListener('wheel', e => {
+
+  console.log(e.pageX,e.pageY);
+});
+
+
+// Lecture # 10
+// Building a Popup
+
+// I am building that in a seperate Files named as
+// pop_up_index, pop_up_style, pop_up_javascript
