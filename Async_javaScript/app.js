@@ -75,13 +75,16 @@ const getTodos = (callback) => {
   req.addEventListener('readystatechange', () => {
 
     if(req.readyState === 4 && req.status === 200){
-      callback(undefined, req.responseText);
+      const data = JSON.parse(req.responseText);
+      callback(undefined, data);
     }else if(req.readyState === 4){
       callback('could not fetch data',undefined);
     }
   });
 
   req.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+  // We can write our own json and then we can convert it into JavaScript Object.
+  // req.open('GET', 'todo.json');
   req.send();
 
 };
@@ -104,3 +107,12 @@ console.log(3);
 console.log(4);
 
 // Here the 1,2,3,4 console can run first and then the when the result came back it run the further data.
+
+// Lecture # 06 JSON Data
+
+// We get the JSON Javascript Object Notation basically as a string.
+// it looks like Object but it is not.
+// we have to convert that string into object by using JSON.parse() function.
+// Everything in the JSON has to be in Double Quotes.
+// a number may or may not be written in the double quotes.
+// Also booleans we cannot use that in strings also.
