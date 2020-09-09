@@ -75,6 +75,8 @@ const getTodos = (callback) => {
   req.addEventListener('readystatechange', () => {
 
     if(req.readyState === 4 && req.status === 200){
+      // We get data from the network as a JSON file which is a string file.
+      // We have to convert it into JavaScript file below line is responsible for that.
       const data = JSON.parse(req.responseText);
       callback(undefined, data);
     }else if(req.readyState === 4){
