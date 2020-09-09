@@ -1,4 +1,4 @@
-// dates and times
+// Lecture # 01 dates and times
 
 // Below is the constructor of the Date Class.
 // Basically it is used to initiate the Class Object.
@@ -32,7 +32,7 @@ console.log(now.toTimeString());
 console.log(now.toLocaleString());
 
 // timestamps
-
+// Lecture # 02
 const before = new Date('February 1 2020 7:30:59');
 // There are many formats to put the date we want to enter
 // This is one of its method.
@@ -57,3 +57,60 @@ console.log(`the blog was written ${days} ago`);
 
 const timestamp = 16758522466;
 console.log(new Date(timestamp));
+
+// Lecture # 03 Digital Clock 
+
+const clock = document.querySelector('.clock');
+
+// function which is updating every single second.
+
+const tick = () => {
+  const now = new Date();
+
+  const h = now.getHours();
+  const m = now.getMinutes();
+  const s = now.getSeconds();
+
+  const html = `
+    <span>${h}</span> :
+    <span>${m}</span> :
+    <span>${s}</span> 
+  `;
+  clock.innerHTML = html;
+};
+
+// This will fire in every second and it is an infinite amount of time.
+setInterval(tick, 1000);
+
+// Lecture # 04 Date & Time Utility
+// https://date-fns.org/
+// Search for format in documentation.
+
+now = new Date();
+
+console.log(dateFns.isToday(now));
+// the above line returns true or false as the compare date is today or not
+
+// formatting options
+
+console.log(dateFns.format(now, 'YYYY'));
+console.log(dateFns.format(now, 'MMM'));
+console.log(dateFns.format(now,'dddd'));
+console.log(dateFns.format(now, 'Do'));
+console.log(dateFns.format(now, 'dddd', 'Do', 'MMMM', 'YYYY'));
+console.log(dateFns.format(now, 'dddd Do MMMM YYYY'));
+
+// Comparing Dates
+
+const before = new Date('February 1 2019 12:00:00');
+
+console.log(dateFns.distanceInWords(now,before));
+// To put the keyword ago
+console.log(dateFns.distanceInWords(now,before, {addSuffix: true}));
+
+
+
+
+
+
+
