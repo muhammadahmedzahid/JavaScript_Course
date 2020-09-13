@@ -31,8 +31,9 @@ const getCity = async (city) => {
     return data[0];
 };
 
-getCity('daska').then(data => {
-    return getWeather(data.Key);
-}).then(data => {
-    console.log(data);
-}).catch(err => console.log(err));
+// the below code we put in the app.js file.
+// getCity('daska').then(data => {
+//     return getWeather(data.Key);
+// }).then(data => {
+//     console.log(data);
+// }).catch(err => console.log(err));
