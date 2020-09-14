@@ -5,17 +5,20 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
-
+const forecast = new Forecast();
+// console.log(forecast);
 const updateUI = (data) => {
+    console.log(data);
     // const cityDets = data.cityDets;
     // const weather = data.weather;
     // De-structure: there is an new way to define the above two lines 
     // in a simpler way which has the same result.
-    const { cityDets, weather } = data;
+    const { cityDebts, weather } = data;
 
     // update details template
+    console.log('cityDebts...',cityDebts);
     details.innerHTML = `
-    <h5 class="my-3">${cityDets.EnglishName}</h5>
+    <h5 class="my-3">${data.cityDebts.EnglishName}</h5>
     <div class="my-3">${weather.WeatherText}</div>
     <div class="display-4 my-4">
         <span>${weather.Temperature.Metric.Value}</span>
@@ -48,16 +51,18 @@ const updateUI = (data) => {
     }
 }
 
-const updateCity = async (city) => {
-    const cityDets = await getCity(city);
-    const weather = await getWeather(cityDets.Key);
+// const updateCity = async (city) => {
+//     const cityDets = await getCity(city);
+//     const weather = await getWeather(cityDets.Key);
 
-    return {
-        cityDets: cityDets,
-        weather: weather
-    };
+//     return {
+//         cityDets: cityDets,
+//         weather: weather
+//     };
 
-};
+// };
+// the above code we comment after learning of the OOP.
+
 
 cityForm.addEventListener('submit' ,e => {
 
@@ -70,8 +75,8 @@ cityForm.addEventListener('submit' ,e => {
     cityForm.reset();
 
     // update the UI with new city
-
-    updateCity(city)
+    
+    forecast.updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
 
@@ -80,7 +85,7 @@ cityForm.addEventListener('submit' ,e => {
 });
 
 if(localStorage.getItem('city')){
-    updateCity(localStorage.getItem('city'))
+    forecast.updateCity(localStorage.getItem('city'))
         .then(data => updateUI(data))
         .catch(err => console.log(err));
 }
