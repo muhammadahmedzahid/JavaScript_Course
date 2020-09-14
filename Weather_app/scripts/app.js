@@ -28,7 +28,7 @@ const updateUI = (data) => {
     const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
-    let timeSrc = null;
+    // let timeSrc = null;
     // if(weather.IsDayTime){
     //     timeSrc = 'img/day.svg';
     // }else{
@@ -38,7 +38,7 @@ const updateUI = (data) => {
     // The above if/else statement we can write also as Ternary Operator.
     // Ternary Operator works like if/else  it returns true or false.
     // const result = condition ? 'value 1' : 'value 2';
-    let timeSrc = weather.IsDayTime ? 'img/dag.svg' : 'img/night.svg';
+    let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
 
     time.setAttribute('src', timeSrc);
 
@@ -74,4 +74,13 @@ cityForm.addEventListener('submit' ,e => {
     updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
+
+    // set local storage
+    localStorage.setItem('city', city);
 });
+
+if(localStorage.getItem('city')){
+    updateCity(localStorage.getItem('city'))
+        .then(data => updateUI(data))
+        .catch(err => console.log(err));
+}
