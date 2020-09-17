@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "babel": "node_modules/.bin/babel app.js -o dist/assests/bundle.js" 
+    "babel": "node_modules/.bin/babel src/app.js -o dist/assests/bundle.js" 
   },
   "author": "",
   "license": "ISC",
