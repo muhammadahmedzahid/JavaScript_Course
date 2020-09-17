@@ -12,3 +12,6 @@
 // the above command saves it developers code also.
 // it will add this in your json code file.
 // and we can only use that in this project and if we want to use them in order project we have to install them.
+// Now we have another thing to install which allows us to use all the modern javascript features.
+// type {npm install @babel/preset-env  --save-dev}
+// .babelrc we have to define that also
