@@ -16,16 +16,36 @@
 // type {npm install @babel/preset-env  --save-dev}
 // .babelrc we have to define that also
 // node.js convert javascript code in our computer.
-// const greet = name => {
-//   console.log(`Hello ${name}`);
+
+// const greet = (name) =>{
+//     console.log(`Hello ${name}`);
 // };
 
 // greet('Muhammad');
-// greet('Ahmed');
-// greet('ali');
-// greet('ali1'); // so we are gonna write this every thing so whats we gonna do for that.
 
+
+// so we are gonna write this every thing so whats we gonna do for that.
 // we remove the old scrip which is named as test then we paste as the above script.
 // named as babel and then paste that code and it works for you.
 // run that command {npm run babel}
 // the file we put into the script in package.json cannot running the file
+// "babel": "node_modules/.bin/babel src/app.js -w -o dist/assests/bundle.js"
+// after that we can run ones npm run babel and after that it watches the next time when code is changes.
+
+// in order to get started with webpack.
+// created new file named as webpack.config.js
+
+// import {styleBody, addTitle, contact} from'./dom'
+import './dom'
+// here we cannot have to specify the .js as webpack is intelligent enough to work with that.
+
+// import users from './data';
+import users,{ getPremUsers} from './data';
+
+const premUsers = getPremUsers(users);
+console.log('index file');
+addTitle('test');
+styleBody();
+console.log(contact);
+console.log(users);
+console.log(premUsers);
