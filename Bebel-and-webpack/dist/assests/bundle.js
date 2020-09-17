@@ -1,3 +1,5 @@
+"use strict";
+
 // Every new update is not supported in the new browsers and after developing that feature it take.
 // sometime to update that features so for that we are gonna use the Babel tool this works for us.
 // and in order to organise our code there is a tool called webpack which we going to use with that.
@@ -16,15 +18,10 @@
 // type {npm install @babel/preset-env  --save-dev}
 // .babelrc we have to define that also
 // node.js convert javascript code in our computer.
-
-const greet = (name) =>{
-    console.log(`Hello ${name}`);
+var greet = function greet(name) {
+  console.log("Hello ".concat(name));
 };
 
 greet('Muhammad');
 greet('Ahmed');
-
-// so we are gonna write this every thing so whats we gonna do for that.
-// we remove the old scrip which is named as test then we paste as the above script.
-// named as babel and then paste that code and it works for you.
-// run that command {npm run babel}
+greet('Zahid');

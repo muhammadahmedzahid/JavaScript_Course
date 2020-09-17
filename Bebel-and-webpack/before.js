@@ -13,4 +13,4 @@ greet('Muhammad');
 // and if we want to upload on the github it is not nessary to upload the modules folder.
 // So, how the other developer run that code so that's thanks to the package.json.
 // open the shell and run the {install npm} command.
-// and it look on the package.json and it install all the packages what you needs.
+// and it look on the package.json and it install all the packages what you need
