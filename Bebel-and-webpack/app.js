@@ -15,3 +15,4 @@
 // Now we have another thing to install which allows us to use all the modern javascript features.
 // type {npm install @babel/preset-env  --save-dev}
 // .babelrc we have to define that also
+// node.js convert javascript code in our computer.
