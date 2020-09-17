@@ -24,6 +24,7 @@ greet('Muhammad');
 greet('Ahmed');
 greet('ali');
 greet('ali1'); // so we are gonna write this every thing so whats we gonna do for that.
+
 // we remove the old scrip which is named as test then we paste as the above script.
 // named as babel and then paste that code and it works for you.
 // run that command {npm run babel}
